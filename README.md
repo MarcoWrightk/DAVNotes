@@ -46,8 +46,8 @@ make
 
 # Documentation
 
-System Architecture
-API Reference
-User Guide
-Developer Notes
+*System Architecture
+*API Reference
+*User Guide
+*Developer Notes
 
