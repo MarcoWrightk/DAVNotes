@@ -43,12 +43,3 @@ mkdir build && cd build
 cmake ..
 make
 
-
-# Documentation
-
-*System Architecture
-
-*https://docs/api_reference.md
-*User Guide
-*Developer Notes
-
