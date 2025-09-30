@@ -1,1 +1,28 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend-java
+    container_name: davnotes-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend-java:/app
+    command: ["./mvnw", "spring-boot:run"]
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+
+  cpp-stub:
+    build: ./simulation-cpp/stub_server
+    container_name: davnotes-cpp-stub
+    ports:
+      - "9000:9000"
+
+  # frontend is optional for MVP if you don't have it yet
+  frontend:
+    build: ./frontend-js
+    container_name: davnotes-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 
