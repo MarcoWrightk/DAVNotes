@@ -1,28 +1,8 @@
-version: "3.8"
-services:
-  backend:
-    build: ./backend-java
-    container_name: davnotes-backend
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./backend-java:/app
-    command: ["./mvnw", "spring-boot:run"]
-    environment:
-      - SPRING_PROFILES_ACTIVE=dev
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
 
-  cpp-stub:
-    build: ./simulation-cpp/stub_server
-    container_name: davnotes-cpp-stub
-    ports:
-      - "9000:9000"
+COPY . /app
+RUN ./mvnw clean package -DskipTests
 
-  # frontend is optional for MVP if you don't have it yet
-  frontend:
-    build: ./frontend-js
-    container_name: davnotes-frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-
+EXPOSE 8080
+CMD ["./mvnw", "spring-boot:run"]
