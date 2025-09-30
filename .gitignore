@@ -1,0 +1,33 @@
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.iml
+*.ipr
+*.iws
+/.idea/
+
+# Node.js
+node_modules/
+dist/
+.env
+npm-debug.log*
+
+# C++
+build/
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dSYM/
+
+# General
+.DS_Store
+*.swp
+*.bak
+*.tmp
+*.vscode/
