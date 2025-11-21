@@ -1,5 +1,4 @@
 // Bind properties prefixed with app.datasource to DataSourceProperties
-@Bean
 @ConfigurationProperties("app.datasource")
 public DataSourceProperties dataSourceProperties() {
     return new DataSourceProperties();
